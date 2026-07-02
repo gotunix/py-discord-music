@@ -1,0 +1,32 @@
+# ================================
+# Discord Music Bot Configuration
+# ================================
+
+# --- Core Discord Settings ---
+# Generated from the Discord Developer Portal
+DISCORD_MUSIC_BOT_TOKEN="your_discord_bot_token_here_xxxx"
+
+# The prefix used to invoke bot commands (e.g., "!" for !play)
+BOT_PREFIX="!"
+
+# --- Plex Integration (Optional) ---
+# Used for exactly matching the internal Plex server
+PLEX_URL="http://192.168.1.100:32400"
+PLEX_TOKEN="your_plex_x-plex-token_here"
+# The exact name of the library section inside Plex where your music originates
+PLEX_MUSIC_LIBRARY="Music"
+
+# --- Pandora Integration (Optional) ---
+# Used for parsing internal Pandora algorithmic stations
+PANDORA_EMAIL="your_email@example.com"
+PANDORA_PASSWORD="your_secure_password"
+
+# --- Audio Tuning & Overrides ---
+# Options: lowQuality, mediumQuality, highQuality
+AUDIO_QUALITY="highQuality"
+
+# Base default volume (0.00 to 1.00) — Defaults very low because Discord audio is loud natively!
+DEFAULT_VOLUME="0.03"
+
+# Path to the FFMPEG executable (Can be left as 'ffmpeg' if running in Docker)
+FFMPEG_PATH="ffmpeg"

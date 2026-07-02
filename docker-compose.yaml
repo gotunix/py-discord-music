@@ -1,0 +1,17 @@
+services:
+  discord-music-bot:
+    build: .
+    container_name: discord_music_bot
+    # The magic bullet: auto-restarts upon crashes or host reboots!
+    restart: unless-stopped
+    
+    # Securely pass all environment variables inside (Discord tokens, Plex info, etc.)
+    env_file:
+      - .env
+      
+    volumes:
+      # We bind-mount the playlists file. That way, when you run "docker compose build" 
+      # and the container refreshes with new code, your saved playlists aren't destroyed!
+      - ./playlists.json:/app/playlists.json
+      # Persist downloaded audio caches to avoid re-downloading music
+      - ./cache:/app/cache
